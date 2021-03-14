@@ -1,25 +1,18 @@
-# Technical Implementation (50 / 100 points) 
+# Technical Implementation
 
-### Use of Data (20 points)
+## File Structure
+- IrisAPP: Simple interactive React Native app with navigation and screens to display key features
+- MapsInterface: Leveraging Google's API services to display an interactive map with nearby hospitals, their ratings, and addresses. This feature is also implemented in IrisApp.
+- ReportGeneration: report.html mimics our final symptom tracking form to accept user input and convert it into a line graph over time. export.html shows functionality for exporting the generated graphs as a comprehensible PDF. These features are also implemented in IrisApp.
 
-The solution leverages relevant, open data in a meaningful way to benefit the target user.
-- WHO Labour Care Guide
-- Pre/Post natal care sources to build the form.
-- Google nearby API for location services and review.  
-- US Department of Agriculture, Agricultural Research Service. 2016. Nutrient Data Laboratory. USDA National Nutrient Database for Standard Reference, Release 28 (Slightly revised). Version Current: May 2016. http://www.ars.usda.gov/nea/bhnrc/mafcl
+## Data
+To help women navigate the resources available to them easily, we decided to use Google's Map Platform web services as they have the most comprehensive, accessible, and up-to-date data for location services. The APIs we used are:
+- Google Maps API
+- Google Places API
 
-### Data sources used are current, credible, and complete (as is possible)
-- [to do: Find when data was published and how credible]
 
-### Privacy, security, and civil liberty are taken into account in the solution. 
-- Users are completely in control of their data. No third-party sharing or access.
+## Privacy, security, and civil liberty 
+Users are completely in control of their data. Since we are dealing with sensitive medical data, all information we collect stays within the app and is not Personally Identifiable. The app does not facilitate third-party sharing or access to medical data. The user can provide the generated report to their health care provider if they choose to do so.
 
-## Innovation (15 points) 
-
-### Solution differentiates itself from others in this problem area by using technology and data in a novel way to address the issue. 
-- [to  do]
-
-## Impact (15 points) 
-
-### The solution is well-designed and pleasant to use. It understands the needs and capabilities of its end-user. 
-- [to do]
+## Innovation 
+One of the key features of the app is to transform experiential data into useful medical data for health care providers and expecting mothers to analyze at a glance. This helps save valuable time and can help flag potential risks on time. 
