@@ -54,15 +54,11 @@
       li {
         background-color: #f1f1f1;
         padding: 10px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        text-overflow:ellipsis;
+        white-space:normal;
         overflow: hidden;
         font-size: 1.25rem;
         cursor: pointer;
-      }
-
-      li:nth-child(odd) {
-        background-color: #fcfcfc;
       }
 
       button {
@@ -91,7 +87,7 @@
         const pyrmont = { lat: 6.521405, lng:  3.366947};
         const map = new google.maps.Map(document.getElementById("map"), {
           center: pyrmont,
-          zoom: 17,
+          zoom: 15,
           //mapId: "8d193001f940fde3",
         });
         const service = new google.maps.places.PlacesService(map);
@@ -126,24 +122,35 @@
 
         for (const place of places) {
           if (place.geometry && place.geometry.location) {
-            const image = {
-              url: place.icon,
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25),
-            };
             new google.maps.Marker({
               map,
-              icon: image,
               title: place.name,
               position: place.geometry.location,
             });
+           
             const li = document.createElement("li");
-            li.textContent = place.name;
+            
+            var listContent = "<ul><li style=\"background-color:white\">"+place.name+"</li>";
+
+            if(place.rating){
+              var stars=Math.floor(Number(place.rating));
+              var i;
+              var totalStars="";
+              for(i=0;i<stars;i++){
+                totalStars=totalStars+"⭐️";
+              }
+              listContent = listContent+"<li style=\"background-color:white\">Rating: "+totalStars+" "+place.rating+"/5</li>";
+            }
+
+            listContent = listContent+"<li style=\"background-color:white\">Address: "+place.vicinity+"</li>";
+            
+            li.innerHTML = listContent+"</u>"; 
             placesList.appendChild(li);
+            
+
             li.addEventListener("click", () => {
               map.setCenter(place.geometry.location);
+              map.setZoom(30);
             });
           }
         }
