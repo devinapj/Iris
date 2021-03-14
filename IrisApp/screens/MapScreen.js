@@ -203,7 +203,7 @@ function WebViewUI(props) {
                 </div>
             
                 <script
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWLfBBRiHKgaTBz8Qg89HyVqZPmJicbWQ&callback=initMap&libraries=places&v=weekly&map_ids=8d193001f940fde3"
+                  src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=places&v=weekly&map_ids=8d193001f940fde3"
                   async
                 ></script>
               </body>
