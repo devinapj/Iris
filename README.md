@@ -1,4 +1,5 @@
-# Technical Implementation
+# 🌺 Iris 🌺
+A patient-centric approach to maternity care tailored for underserved markets
 
 ## File Structure
 - IrisAPP: Simple interactive React Native app with navigation and screens to display key features
